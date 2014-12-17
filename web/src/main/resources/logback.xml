@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{500} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="appRollingFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/app/app.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/app/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{500} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="sqlRollingFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/sql/sql.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/sql/sql.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{500} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- project default level -->
+	<logger name="org.liuwt.app" level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="appRollingFile" />
+	</logger>
+
+	<logger name="org.springframework" level="OFF">
+		<appender-ref ref="console" />
+		<appender-ref ref="appRollingFile" />
+	</logger>
+
+	<!--log4jdbc -->
+	<logger name="com.alibaba.druid">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="sqlRollingFile" />
+	</logger>
+	<logger name="jdbc.sqltiming">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="sqlRollingFile" />
+	</logger>
+	<logger name="jdbc.connection">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="sqlRollingFile" />
+	</logger>
+</configuration>
