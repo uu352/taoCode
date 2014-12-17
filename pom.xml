@@ -17,7 +17,9 @@
         <spring.version>4.1.3.RELEASE</spring.version>
         <hibernate.version>4.2.3.Final</hibernate.version>
         <spring-data-jpa.version>1.7.1.RELEASE</spring-data-jpa.version>
+        <aspectj.version>1.8.4</aspectj.version>
         <durid.version>1.0.11</durid.version>
+        <fastjson.version>1.2.3</fastjson.version>
         <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
         <ehcache.version>2.7.0</ehcache.version>
         <slf4j.version>1.7.5</slf4j.version>
@@ -122,12 +124,12 @@
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
-                <version>1.7.3</version>
+                <version>${aspectj.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
-                <version>1.7.3</version>
+                <version>${aspectj.version}</version>
                 <scope>runtime</scope>
             </dependency>
             <!-- AOP end -->
@@ -277,7 +279,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.1.31</version>
+                <version>${fastjson.version}</version>
             </dependency>
             <!-- 		<dependency>
                         <groupId>org.codehaus.jackson</groupId>
