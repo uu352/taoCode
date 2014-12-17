@@ -1,20 +1,14 @@
-package org.liuwt.core.utils;
+package org.taocode.core.utils;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
+import com.google.common.net.HttpHeaders;
+import org.apache.commons.lang3.Validate;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang3.Validate;
-
-import com.google.common.net.HttpHeaders;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Http与Servlet工具类.

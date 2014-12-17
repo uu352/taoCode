@@ -1,4 +1,4 @@
-package org.liuwt.core.security.utils;
+package org.taocode.core.security.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 
 import org.apache.commons.lang3.Validate;
-import org.liuwt.core.utils.Exceptions;
+import org.taocode.core.utils.Exceptions;
 
 /**
  * 支持SHA-1/MD5消息摘要的工具类.

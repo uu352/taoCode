@@ -1,4 +1,4 @@
-package org.liuwt.core.utils;
+package org.taocode.core.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
