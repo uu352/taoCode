@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<!-- 自动扫描且只扫描@Controller -->
-	<context:component-scan base-package="org.liuwt.app"
+	<context:component-scan base-package="org.taocode.app"
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
@@ -46,24 +46,13 @@
 	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL -->
 	<mvc:default-servlet-handler />
 
-	<!-- 方法执行权限拦截 -->
-	<bean id="permissionInterceptor"
-		class="org.liuwt.app.util.interceptor.MethodPermissionInterceptor" />
-	<aop:config>
-		<!--方法执行权限切入点 -->
-		<aop:pointcut id="permissionPoint"
-			expression="execution(* org.liuwt.app.web..*Controller.*(..))" />
-		<!--在切入点执行方法权限拦截器 -->
-		<aop:advisor pointcut-ref="permissionPoint" advice-ref="permissionInterceptor" />
-	</aop:config>
-
 	<!-- 将Controller抛出的异常转到特定View -->
 	<bean
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
-				<prop key="org.liuwt.app.util.interceptor.UnAuthorizationException">error/noSecurity</prop>
-				<prop key="org.liuwt.app.util.interceptor.NoSessionException">error/noSession</prop>
+				<prop key="org.taocode.app.util.interceptor.UnAuthorizationException">error/noSecurity</prop>
+				<prop key="org.taocode.app.util.interceptor.NoSessionException">error/noSession</prop>
 			</props>
 		</property>
 	</bean>
