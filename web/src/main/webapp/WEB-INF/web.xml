@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	<display-name>easyUI</display-name>
+	<display-name>my web</display-name>
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -63,19 +63,20 @@
 		<session-timeout>30</session-timeout>
 	</session-config>
 	
-	<!-- 找不到页错误转向 -->
-	<error-page>
-		<error-code>404</error-code>
-		<location>/error/404.jsp</location>
-	</error-page>
-	<!-- 系统内部错误转向 -->
-	<error-page>
-		<error-code>500</error-code>
-		<location>/error/500.jsp</location>
-	</error-page>
+	<!--&lt;!&ndash; 找不到页错误转向 &ndash;&gt;-->
+	<!--<error-page>-->
+		<!--<error-code>404</error-code>-->
+		<!--<location>/error/404.jsp</location>-->
+	<!--</error-page>-->
+	<!--&lt;!&ndash; 系统内部错误转向 &ndash;&gt;-->
+	<!--<error-page>-->
+		<!--<error-code>500</error-code>-->
+		<!--<location>/error/500.jsp</location>-->
+	<!--</error-page>-->
 
 	<!-- 设置欢迎页面 -->
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<!--<welcome-file>index.jsp</welcome-file>-->
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 </web-app>
